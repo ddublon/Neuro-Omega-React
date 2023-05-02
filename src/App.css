@@ -1,0 +1,32 @@
+#root {
+  min-height: 100vh;
+  display: grid;
+  /* we have 3 rows: header, main and footer. We want the main content to fill the empty space when the content doesn't fill the viewport */
+  grid-template-rows: 1fr auto;
+}
+
+.main {
+  /* display: flex;
+  flex-direction: column;
+  align-items: ;
+  justify-content: end;
+  gap: 1rem;
+  background: yellow; */
+}
+
+.footer {
+  /* background: blue; */
+}
+
+.active {
+  /* make a border top of 2 pixels of the primary color */
+  border-top: 4px solid #a71a32;
+  /* make the border top rounded */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #a71a32;
+}
+
+.flex {
+  display: flex;
+}
