@@ -39,9 +39,9 @@ this is the POC of the graph, used for makeing sure we can use muPlot for our pr
 
 # Live Demo
 
-[Live Demo](https://haguide-poc-tauri.vercel.app/graphpage)
+[Live Demo](https://neuro-omega-react.vercel.app/)
 
-https://haguide-poc-tauri.vercel.app/graphpage
+https://neuro-omega-react.vercel.app/ 
 
 ## Authors
 
