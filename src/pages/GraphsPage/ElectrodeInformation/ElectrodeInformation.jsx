@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import RealTimeGraphContainer from "../RealTimeGraphContainer";
 import BarChartComponent from "../NRMS/BarChartComponent";
+import PSDComponent from "../PSD/PSDComponent";
 
 const StyledElectrodeInformation = styled.div`
   display: flex;
@@ -35,7 +36,10 @@ const ElectrodeInformation = () => {
         .map((_, index) => (
           <>
             <RealTimeGraphContainer key={index} />
-            <BarChartComponent key={index} />
+            <div className="flex">
+              <BarChartComponent key={index} />
+              <PSDComponent key={Math.random()} />
+            </div>
           </>
         ))}
     </StyledElectrodeInformation>
