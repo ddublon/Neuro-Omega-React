@@ -40,7 +40,7 @@ const PSDComponent = () => {
         setAllSitesData(() => ({ ...initialAllSitesData }));
       // }, 1000);
 
-      setIntervalID(animate);
+     // setIntervalID(animate);
     }
   };
 
