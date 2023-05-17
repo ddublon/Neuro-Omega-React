@@ -103,6 +103,11 @@ src:
 
 ## Running Tests
 
+you can view the test in this website
+
+https://alphaomegagithub.github.io/Neuro-Omega-React/
+
+
 To run tests, run the following command
 
 clone the project
