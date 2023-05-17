@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "haguide-poc",
+    "productName": "Haguide-Front-End",
     "version": "0.0.0"
   },
   "tauri": {
@@ -27,7 +27,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.haguide",
+      "identifier": "com.haguide.dev",
       "targets": "all"
     },
     "security": {
@@ -40,7 +40,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "haguide-poc",
+        "title": "Haguide-Front-End",
         "width": 800,
         "height": 600
       }
