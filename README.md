@@ -49,6 +49,10 @@ https://neuro-omega-react.vercel.app/
 - [@Ali Hilo](https://www.github.com/a.hilo)
 - [@Salma Khatib](https://www.github.com/SalmaKhatib)
 
+# Install Rust
+  
+
+
 # Getting Started
 
 clone the project
@@ -57,8 +61,8 @@ clone the project
     git clone https://github.com/dolev146/haguide-poc-tauri.git
 ```
 
-make sure you have nodejs --version 18 installed on your system,
-and start the development server with npm start in the terminal.
+* make sure you have nodejs --version 18 installed on your system,
+* and start the development server with npm start in the terminal.
 
 go to project directory
 ```
