@@ -50,8 +50,46 @@ https://neuro-omega-react.vercel.app/
 - [@Salma Khatib](https://www.github.com/SalmaKhatib)
 
 # Install Rust
+  https://tauri.app/v1/guides/getting-started/prerequisites/
   
+### 1. Download and install this https://aka.ms/vs/17/release/vs_BuildTools.exe
 
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/ada7f8ef-86ed-4443-9e4f-3b84e42a9687)
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/a7e7d966-562a-4d4e-a69f-7a172da4589e)
+
+### 2. Download Evergreen Bootstrapper driver https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/cff372bc-8335-452d-8b4b-f5f0780782f7)
+
+### 3.Install rust on your system https://www.rust-lang.org/tools/install
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/81ce5dde-c8cf-4697-a0d0-c792a0d85654)
+
+### 4.Open download file and inside the terminal insert 1 and press enter.
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/b7a7f3a9-3fb9-4865-8046-836db2dc2598)
+
+### 5. You should get this message after the installing
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/f337d1d2-4e90-4b08-ba60-9944b5dba82f)
+
+### 6.Open terminal using commanand proport.
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/dda4a6c2-dd18-481c-8808-1dc2c5919936)
+
+### 7. Make sure you have latest Rust version on your system. Type in the command prompt:
+
+ ```rustup update```
+
+![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/b4a6aee2-f264-488b-83d7-105448dd4e04)
+
+### 8. To check whether you have Rust installed correctly, open a shell and enter this command:
+   ``` rustc --version```
+    
+    ![image](https://github.com/AlphaOmegaGithub/Neuro-Omega-React/assets/127298010/ec2142ba-3fcb-4c99-80a7-411cead3f702)
+
+### 9. Restart your computer.
 
 # Getting Started
 
