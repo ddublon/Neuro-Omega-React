@@ -47,6 +47,7 @@ https://neuro-omega-react.vercel.app/
 
 - [@Dolev Dublon](https://www.github.com/dolev146)
 - [@Ali Hilo](https://www.github.com/a.hilo)
+- [@Salma Khatib](https://www.github.com/SalmaKhatib)
 
 # Getting Started
 
