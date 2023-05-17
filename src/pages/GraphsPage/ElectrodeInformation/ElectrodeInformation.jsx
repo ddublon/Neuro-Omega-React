@@ -36,10 +36,6 @@ const ElectrodeInformation = () => {
         .map((_, index) => (
           <>
             <RealTimeGraphContainer key={index} />
-            <div className="flex">
-              <BarChartComponent key={index} />
-              <PSDComponent key={Math.random()} />
-            </div>
           </>
         ))}
     </StyledElectrodeInformation>

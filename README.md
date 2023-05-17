@@ -1,47 +1,47 @@
+# Haguide poc with tauri
+
 - [Haguide poc with tauri desktop app](#haguide-poc-with-tauri-desktop-app)
 - [Live Demo](#live-demo)
-  * [Authors](#authors)
+  - [Authors](#authors)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-  * [Running Tests](#running-tests)
-  * [Deployment](#deployment)
-  * [Demo](#demo)
-  * [Usage/Examples](#usage-examples)
-  * [API Reference](#api-reference)
-      - [Get the](#get-the)
-      - [Get item](#get-item)
-      - [add(num1, num2)](#add-num1--num2-)
+  - [Running Tests](#running-tests)
+  - [Deployment](#deployment)
+  - [Demo](#demo)
+  - [Usage/Examples](#usage-examples)
+  - [API Reference](#api-reference)
+    - [Get the](#get-the)
+    - [Get item](#get-item)
+    - [add(num1, num2)](#add-num1--num2-)
 - [development process](#development-process)
 - [Choosing the library for the graphs](#choosing-the-library-for-the-graphs)
-  * [The first thing me and Ali used was canvasJS which is number 5 on the free tools list](#the-first-thing-me-and-ali-used-was-canvasjs-which-is-number-5-on-the-free-tools-list)
-  * [the second thing Dolev and Ali tried was MuPlot because we saw this comparison they did on the readme page](#the-second-thing-dolev-and-ali-tried-was-muplot-because-we-saw-this-comparison-they-did-on-the-readme-page)
+  - [The first thing me and Ali used was canvasJS which is number 5 on the free tools list](#the-first-thing-me-and-ali-used-was-canvasjs-which-is-number-5-on-the-free-tools-list)
+  - [the second thing Dolev and Ali tried was MuPlot because we saw this comparison they did on the readme page](#the-second-thing-dolev-and-ali-tried-was-muplot-because-we-saw-this-comparison-they-did-on-the-readme-page)
 - [Getting Started with Create React App](#getting-started-with-create-react-app)
-  * [Available Scripts](#available-scripts)
-    + [`npm start`](#-npm-start-)
-    + [`npm test`](#-npm-test-)
-    + [`npm run build`](#-npm-run-build-)
-    + [`npm run eject`](#-npm-run-eject-)
-  * [Learn More](#learn-more)
-    + [Code Splitting](#code-splitting)
-    + [Analyzing the Bundle Size](#analyzing-the-bundle-size)
-    + [Making a Progressive Web App](#making-a-progressive-web-app)
-    + [Advanced Configuration](#advanced-configuration)
-    + [Deployment](#deployment-1)
-    + [`npm run build` fails to minify](#-npm-run-build--fails-to-minify)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#-npm-start-)
+    - [`npm test`](#-npm-test-)
+    - [`npm run build`](#-npm-run-build-)
+    - [`npm run eject`](#-npm-run-eject-)
+  - [Learn More](#learn-more)
+    - [Code Splitting](#code-splitting)
+    - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+    - [Making a Progressive Web App](#making-a-progressive-web-app)
+    - [Advanced Configuration](#advanced-configuration)
+    - [Deployment](#deployment-1)
+    - [`npm run build` fails to minify](#-npm-run-build--fails-to-minify)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 # Haguide poc with tauri desktop app
 
 this is the POC of the graph, used for makeing sure we can use muPlot for our product
 
-
 # Live Demo
 
 [Live Demo](https://neuro-omega-react.vercel.app/)
 
-https://neuro-omega-react.vercel.app/ 
+https://neuro-omega-react.vercel.app/
 
 ## Authors
 
@@ -50,7 +50,7 @@ https://neuro-omega-react.vercel.app/
 
 # Getting Started
 
-clone the project 
+clone the project
 
 ```bash
     git clone https://github.com/dolev146/haguide-poc-tauri.git
@@ -58,7 +58,8 @@ clone the project
 
 make sure you have nodejs --version 18 installed on your system, and start the development server with npm start in the terminal.
 
-# Project Structure 
+# Project Structure
+
 ```
 src:
 ├───data
@@ -81,7 +82,6 @@ src:
 └───styles
 ```
 
-
 ## Running Tests
 
 To run tests, run the following command
@@ -89,6 +89,7 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
+
 ## Deployment
 
 To deploy this project run
@@ -97,20 +98,17 @@ To deploy this project run
   npm run deploy
 ```
 
-
 ## Demo
 
 Insert gif or link to demo
 
-
-
 ## Usage/Examples
 
 ```javascript
-import Component from 'my-project'
+import Component from "my-project";
 
 function App() {
-  return <Component />
+  return <Component />;
 }
 ```
 
@@ -142,17 +140,15 @@ we are using tcp socket connections with web sockets io or something like that i
 
 Takes two numbers and returns the sum.
 
-
-
-# development process 
+# development process
 
 starting with the initial requirements
 
 ![image](https://user-images.githubusercontent.com/62290677/230029128-51958b45-a60c-402b-86ca-f4baefc4b490.png)
 
-implementing CSS  Grid in order to divide the page into 3 parts: header main content and footer.
+implementing CSS Grid in order to divide the page into 3 parts: header main content and footer.
 
-for more information about Grid CSS watch this [YouTube video](https://youtu.be/EiNiSFIPIQE?t=531) 
+for more information about Grid CSS watch this [YouTube video](https://youtu.be/EiNiSFIPIQE?t=531)
 
 and view the [line in the code](https://github.com/dolev146/hagauide_poc/blob/1fad9b831079cb056599f14f33be8ac0349a9eb7/src/App.js#L15) that are influenced by the CSS Grid.
 
@@ -162,29 +158,19 @@ divided into 4 columns
 
 ![image](https://user-images.githubusercontent.com/62290677/231482585-bdec6cff-7388-4e4a-be2f-c8d15646c8db.png)
 
-
-
-1. header 
+1. header
 2. main content
 3. footer
-
 
 implemented the Login Page with the same logic :
 
 ![image](https://user-images.githubusercontent.com/62290677/231480417-5ae9b71a-de50-4991-8208-b0c05008f743.png)
 
-1 - 5 are columns that divide the CSS grid into 1f each,
-6. is just a margin-top of 40vh [see relevant code](https://github.com/dolev146/hagauide_poc/blob/1fad9b831079cb056599f14f33be8ac0349a9eb7/src/pages/LoginPage/LoginPageComponent.jsx#L26) to control the margin
-
-
-
-
-
-
+1 - 5 are columns that divide the CSS grid into 1f each, 6. is just a margin-top of 40vh [see relevant code](https://github.com/dolev146/hagauide_poc/blob/1fad9b831079cb056599f14f33be8ac0349a9eb7/src/pages/LoginPage/LoginPageComponent.jsx#L26) to control the margin
 
 # Choosing the library for the graphs
 
-Challenges: 
+Challenges:
 
 implementing the front-end graphs (finding the correct way that can render many data points on the screen)
 getting the data from the server and rendering it accordingly to the graphs (how to manipulate the data I already have and slice it to add the new data accordingly )
@@ -198,7 +184,7 @@ understanding how the communication will be established with the server (need to
 
 Questions for Team voting:
 how much data do we really need for the graph to give a good user experience?
-I need to make an appointment with Loay and understand how they implemented the graphs. 
+I need to make an appointment with Loay and understand how they implemented the graphs.
 
 2 million points is a lot of points, and even with C language it takes a lot of time, we need to Normalize the data because the human eye can't make a difference with this huge set of data.
 refresh rate vs data points.
@@ -212,16 +198,9 @@ testing in a large set of data
 deciding how the data should be transferred (JSON format)
 implementing the design of Keren
 
-
-
-
-
-
-
-
 I want to document what are the concerns and what is the thinking process and as well as the development process so that anybody can view it review my actions and advise me:
 implementing 40 graphs with a 44hz refresh rate, and drawing them on the screen
-specific numbers: 1 graph need to contain information of 5 seconds, and need to refresh in real-time, at least at 30fps. 
+specific numbers: 1 graph need to contain information of 5 seconds, and need to refresh in real-time, at least at 30fps.
 
 I need to know the sampling rate that will be transferred to us.
 But if I remember correctly from Ali we need to at least be able to draw 2 million data points a second. for testing the performance but! I want to talk to Keren and understand if there is a way to reduce the amount of data we need to show and still give a good user experience.
@@ -233,18 +212,18 @@ my first action in trying to implement this was searching on Google for the righ
 found lots of tools, I want to name a few:
 
 free tools
-| Library   | Ease of use | Engine             |
+| Library | Ease of use | Engine |
 |-----------|-------------|--------------------|
-| MuPlot    | Easy        | JavaScript         |
-| Chartsjs  | Easy        | JavaScript         |
-| D3        | Moderate    | WebAssembly/OpenGL |
-| Webgl-plot| Moderate    | WebAssembly/OpenGL |
-| CanvasJS  | Easy        | JavaScript         |
-| KeyLines  | -           | JavaScript         |
+| MuPlot | Easy | JavaScript |
+| Chartsjs | Easy | JavaScript |
+| D3 | Moderate | WebAssembly/OpenGL |
+| Webgl-plot| Moderate | WebAssembly/OpenGL |
+| CanvasJS | Easy | JavaScript |
+| KeyLines | - | JavaScript |
 
 Writing a program in languages such as C/C++, C#, and Rust other and compiling it into WebAssembly to achieve near-native results.
 
-maybe make a meeting with Eric 
+maybe make a meeting with Eric
 
 send a mail to cheng and propose a meeting with Eric to understand the data flow to the charts
 
@@ -252,28 +231,20 @@ tools that cost 1000$ a year for a license:
 Scicharts - used in the AlphaRS system
 LightingChart - said on the website it used in the medical industry tried to contact them, but didn't respond to them
 
-
-
-
-
-
 ## The first thing me and Ali used was canvasJS which is number 5 on the free tools list
+
 because we saw this link
-https://canvasjs.com/javascript-charts/performance-demo-chart/ 
+https://canvasjs.com/javascript-charts/performance-demo-chart/
 and this performance view shows that it can render 50,000 points in 100ms
 ![image](https://user-images.githubusercontent.com/62290677/231573419-2ee582d0-2565-45f4-adc1-e15fda20ed6d.png)
 
-link : 
+link :
 
 ## the second thing Dolev and Ali tried was MuPlot because we saw this comparison they did on the readme page
 
-link: 
+link:
 
-
-
-
-
-------------------------------------------------------------------
+---
 
 # Getting Started with Create React App
 

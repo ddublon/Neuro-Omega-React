@@ -2,25 +2,32 @@ import React, { useEffect, useRef, useState } from "react";
 import UplotReact from "uplot-react";
 import "uplot/dist/uPlot.min.css";
 
-const options = {
-  width: 300,
-  height: 300,
-  scales: {
-    x: {
-      time: false,
-    },
-    y: {},
-  },
-  axes: [{}],
-  series: [
-    {},
-    {
-      stroke: "blue",
-    },
-  ],
-};
-
 const RealTimeGraph = ({ isAnimating, title }) => {
+  const options = {
+    title: `${title} 44khz`,
+    width: 280,
+    height: 260,
+    legend: {
+      show: false,
+    },
+    cursor:{
+      show: false,
+    },
+    
+    scales: {
+      x: {
+        time: false,
+      },
+      y: {},
+    },
+    axes: [{}],
+    series: [
+      {},
+      {
+        stroke: "blue",
+      },
+    ],
+  };
   let nullStart = 0;
   let nullEnd = 2_200 * 5;
   let nullCount = 2_200 * 5;
@@ -80,7 +87,6 @@ const RealTimeGraph = ({ isAnimating, title }) => {
 
   return (
     <div>
-      <h4>{title}</h4>
       {
         // if DataMat is not null then show UplotReact
         DataMat && (
@@ -89,14 +95,13 @@ const RealTimeGraph = ({ isAnimating, title }) => {
             data={DataMat}
             onCreate={(chart) => {
               chartRef.current = chart;
-              console.log(chartRef.current);
+              // console.log(chartRef.current);
             }}
             onDelete={(chart) => {}}
             key={Math.random()}
           />
         )
       }
-      <h4>44kh</h4>
     </div>
   );
 };
