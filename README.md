@@ -57,7 +57,21 @@ clone the project
     git clone https://github.com/dolev146/haguide-poc-tauri.git
 ```
 
-make sure you have nodejs --version 18 installed on your system, and start the development server with npm start in the terminal.
+make sure you have nodejs --version 18 installed on your system,
+and start the development server with npm start in the terminal.
+
+go to project directory
+```
+  cd haguide-poc-tauri
+```
+
+```
+  npm i
+```
+```
+  npm run dev
+```
+
 
 # Project Structure
 
@@ -87,8 +101,25 @@ src:
 
 To run tests, run the following command
 
+clone the project
+
 ```bash
-  npm run test
+    git clone https://github.com/dolev146/haguide-poc-tauri.git
+```
+
+make sure you have nodejs --version 18 installed on your system,
+and start the development server with npm start in the terminal.
+
+go to project directory
+```
+  cd haguide-poc-tauri
+```
+
+```
+  npm i
+```
+```
+  npm test
 ```
 
 ## Deployment
