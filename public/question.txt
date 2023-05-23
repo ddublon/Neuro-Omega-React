@@ -1,0 +1,6 @@
+psd [x,y,z]
+
+x = ? "value_uMeter":24600, 
+y = ? [0...300] in steps of 1/3
+z = ? "PSD_Power" 
+
