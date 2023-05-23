@@ -27,7 +27,7 @@ const ElectrodesDropDownMenu = ({
   };
 
   return (
-    <div className="box">
+    <div className="box ">
       <Dropdown>
         <Dropdown.Toggle
           style={{ background: "#a71a32", width: "40px", border: "none" }}

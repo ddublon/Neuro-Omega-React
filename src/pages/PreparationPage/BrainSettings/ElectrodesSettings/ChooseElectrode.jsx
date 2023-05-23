@@ -26,7 +26,7 @@ const ChooseElectrode = ({ side, electrodeNumbers, setElectrodeNumbers }) => {
     <>
       <div>ChooseElectrode</div>
       <StyledChooseElectrode>
-        <div className="container">
+        <div data-testid="container" className="container">
           {electrodeCells.map((cellNumber) => {
             return (
               <ElectrodesDropDownMenu
