@@ -3,7 +3,7 @@
   display: grid;
   /* we have 3 rows: header, main and footer. We want the main content to fill the empty space when the content doesn't fill the viewport */
   grid-template-rows: 1fr auto;
-}
+} 
 
 .main {
   /* display: flex;

@@ -34,9 +34,7 @@ const ElectrodeInformation = () => {
       {Array(count)
         .fill()
         .map((_, index) => (
-          <>
-            <RealTimeGraphContainer key={index} />
-          </>
+          <RealTimeGraphContainer key={`RealTimeGraphContainer${index}`} />
         ))}
     </StyledElectrodeInformation>
   );
