@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import UplotReact from "uplot-react";
 import "uplot/dist/uPlot.min.css";
 
-const RealTimeGraph = ({ isAnimating, title }) => {
+const RealTimeGraph = ({ isAnimating, title, jsonSource, electrodeNumber }) => {
   const options = {
     title: `${title} 44khz`,
     width: 280,
@@ -10,10 +10,10 @@ const RealTimeGraph = ({ isAnimating, title }) => {
     legend: {
       show: false,
     },
-    cursor:{
+    cursor: {
       show: false,
     },
-    
+
     scales: {
       x: {
         time: false,
@@ -24,7 +24,7 @@ const RealTimeGraph = ({ isAnimating, title }) => {
     series: [
       {},
       {
-        stroke: "blue",
+        stroke: electrodeNumber === 0 ? "blue" : "red",
       },
     ],
   };
@@ -37,12 +37,15 @@ const RealTimeGraph = ({ isAnimating, title }) => {
   const [DataMat, setDataMat] = useState(null); // [x, y]
 
   const UpdateChart = () => {
-    // let temp = [... chartRef.current.data];
+    // console.log("chartRef.current", chartRef.current);
+    if (chartRef.current === null) return;
+    if (DataMat === null) return;
     let temp = [...chartRef.current.data];
     if (nullStart + nullCount > temp[1].length) {
       nullStart = 0;
       nullEnd = 2_200 * 4;
     }
+
     // use nullStart nullEnd nullCount to update the data
     for (let i = nullEnd; i < temp[1].length && i < nullEnd + nullCount; i++) {
       temp[1][i] = null;
@@ -50,6 +53,7 @@ const RealTimeGraph = ({ isAnimating, title }) => {
     for (let i = nullStart; i < nullStart + nullCount; i++) {
       temp[1][i] = DataMat[1][i];
     }
+
     // update the nullStart nullEnd nullCount
     nullStart = nullStart + nullCount;
     nullEnd = nullEnd + nullCount;
@@ -57,12 +61,20 @@ const RealTimeGraph = ({ isAnimating, title }) => {
   };
 
   useEffect(() => {
-    // fetch the data from ./DataMat.json
-    fetch("./DataMat.json")
-      .then((response) => response.json())
-      .then((jsonData) => {
-        setDataMat(jsonData);
+    fetch("./xAxis.json").then((response) => {
+      response.json().then((xAxis) => {
+        let data = [];
+        data.push(xAxis);
+        // fetch the data from json file
+        fetch(`./${jsonSource}`)
+          .then((response) => response.json())
+          .then((jsonData) => {
+            // console.log("electrode ", electrodeNumber);
+            data.push(jsonData[electrodeNumber]);
+            setDataMat(data);
+          });
       });
+    });
   }, []);
 
   useEffect(() => {
@@ -81,7 +93,7 @@ const RealTimeGraph = ({ isAnimating, title }) => {
       // console.time("UpdateChart");
       UpdateChart();
       // console.timeEnd("UpdateChart");
-    }, 100);
+    }, 10);
     return () => clearInterval(interval);
   };
 
