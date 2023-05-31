@@ -17,6 +17,7 @@ const StyledChooseElectrode = styled.div`
     padding: 10px;
     font-size: 24px;
     text-align: center;
+    visibility: visible;
   }
 `;
 

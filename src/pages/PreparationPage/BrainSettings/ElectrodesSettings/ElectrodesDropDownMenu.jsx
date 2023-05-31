@@ -30,8 +30,13 @@ const ElectrodesDropDownMenu = ({
     <div className="box ">
       <Dropdown>
         <Dropdown.Toggle
-          style={{ background: "#a71a32", width: "40px", border: "none" }}
-          id="dropdown-basic"
+          style={{
+            background: "#a71a32",
+            width: "40px",
+            border: "none",
+            visibility: "visible",
+          }}
+          id={`dropdown-basic-${side}-electrode-${cellNumber}`}
         >
           {chosenElectrode}
         </Dropdown.Toggle>

@@ -29,6 +29,7 @@ const ChooseBengun = ({ side }) => {
     <StyledChooseBengun>
       ChooseBengun:
       <img
+        id={`Bengun${side}Cross`}
         onClick={() => {
           handleBengun({ cross: true, plus: false });
         }}
@@ -41,6 +42,7 @@ const ChooseBengun = ({ side }) => {
         }}
       />
       <img
+        id={`Bengun${side}Plus`}
         onClick={() => {
           handleBengun({ cross: false, plus: true });
         }}
