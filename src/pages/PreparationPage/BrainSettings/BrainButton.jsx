@@ -48,6 +48,7 @@ const BrainButton = ({ side }) => {
 
   return (
     <StyledBrainButton
+      id={`MenuSideButton${side}`}
       onClick={handleBrainClick}
       bgColor={BrainStatus ? "#a71a32" : "white"}
       borderColor={BrainStatus ? "white" : "#a71a32"}
