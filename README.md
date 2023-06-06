@@ -126,7 +126,7 @@ src:
 │   ├───contexts
 │   ├───GraphsPage
 │   │   ├───LFPChannels
-│   │   ├───NRMS
+│   │   ├───RMS
 │   │   ├───PSD
 │   │   ├───RawChannels
 │   │   └───SPKChannels

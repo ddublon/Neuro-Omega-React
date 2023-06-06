@@ -56,9 +56,9 @@ const RealTimeGraphContainer = () => {
               ? `show electrode ${idx}`
               : `hide electrode ${idx}`}
           </button>
+          <h4>{`Electrode_${idx}`}</h4>
           {!hiddenArray[idx] && (
             <div className="flex" key={`container${idx}`}>
-              <h4>{`Electrode_${idx}`}</h4>
               {sites.map((site, i) => (
                 <RealTimeGraph
                   key={`site-${i}-electrode-${idx}`}

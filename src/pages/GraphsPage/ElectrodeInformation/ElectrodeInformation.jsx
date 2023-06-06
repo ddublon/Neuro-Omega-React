@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import RealTimeGraphContainer from "../RealTimeGraphContainer";
-import BarChartComponent from "../NRMS/BarChartComponent";
+import BarChartComponent from "../RMS/BarChartComponent";
 import PSDComponent from "../PSD/PSDComponent";
 
 const StyledElectrodeInformation = styled.div`

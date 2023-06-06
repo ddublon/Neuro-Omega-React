@@ -1,117 +1,87 @@
-import React, { useState } from "react";
 import { DynamicPsdHeatMap } from "./DynamicPsdHeatMap";
+import ChannelsData from "./ChannelsData.json";
+import { useEffect, useState } from "react";
 
-// const createInitialAllSitesData = () => {
-//   const numberOfSites = 25;
+const SCALER_HEIGHT = 25;
 
-//   const generateRandomData = (length) =>
-//     Array.from({ length }, () => (Math.random() * 4 - 4).toFixed(5));
+const PSDComponent = ({ heatmapRMSHeight, min, max, startAnimation }) => {
+  // please explain the how to use all sites data parameter and why it doesnt work with null?
 
-//   const generateRandomDataForSites = (numberOfSites, dataLength) =>
-//     Array.from({ length: numberOfSites }, () => generateRandomData(dataLength));
+  const [newSiteData, setNewSiteData] = useState(null);
 
-//   return {
-//     siteDepth: Array.from({ length: numberOfSites }, (_, i) => 10 - i * 0.4),
-//     stride: 0.3,
-//     startFreq: 3,
-//     psd: [].concat(...generateRandomDataForSites(numberOfSites, 100)),
-//   };
-// };
-// const getNewSiteData = (depth) => {
-//   const numberOfSites = 25;
-//   const generateRandomData = (length) =>
-//     Array.from({ length }, () => (Math.random() * 4 - 4).toFixed(5));
+  const startAnimationFunc = () => {
+    const value_uMeter_array = [];
+    const PSD_Power_array = [];
 
-//   return {
-//     depth,
-//     stride: 0.3,
-//     startFreq: 3,
-//     psd: [].concat(...generateRandomData(100)),
-//   };
-// };
+    for (let index = 0; index < ChannelsData[0].data.SitesCount; index++) {
+      value_uMeter_array.push(ChannelsData[0].data.depth[index].value_uMeter);
+      PSD_Power_array.push(ChannelsData[0].data.depth[index].PSD_Power);
+    }
 
-const PSDComponent = ({
-  initialAllSitesData,
-  allSitesData,
-  setAllSitesData,
-  newSiteData,
-  setNewSiteData,
-  viewPort,
-  setViewPort,
-  animationInProgress,
-  setAnimationInProgress,
-}) => {
-  // const initialAllSitesData = createInitialAllSitesData();
-  const psdArray = initialAllSitesData.psd;
-  // console.log({ psdArray });
-  // const [intervalIDPSD, setintervalIDPSD] = useState(null);
+    const PSD_Power_array_2 = PSD_Power_array.map((array) => {
+      const new_array = array.map((array2) => {
+        return array2[0];
+      });
+      return new_array;
+    });
 
-  // const [allSitesData, setAllSitesData] = useState({
-  //   // ...initialAllSitesData,
-  //   siteDepth: [],
-  //   stride: 0.3333333333,
-  //   startFreq: 3,
-  //   psd: [],
-  // });
+    console.log("value_uMeter", value_uMeter_array);
+    console.log("One Row PSD_Power", PSD_Power_array_2[0]);
+    setNewSiteData({
+      depth: value_uMeter_array[0] / 1000,
+      stride: 0.3,
+      startFreq: 4,
+      psd: PSD_Power_array_2[0],
+    });
 
-  // const [newSiteData, setNewSiteData] = useState(null);
+    const ChangeNewSiteData = (
+      index,
+      value_uMeter_array,
+      PSD_Power_array_2
+    ) => {
+      console.log(value_uMeter_array[index] / 1000, PSD_Power_array_2[index]);
+      setNewSiteData({
+        depth: value_uMeter_array[index] / 1000,
+        stride: 0.3,
+        startFreq: 4,
+        psd: PSD_Power_array_2[index],
+      });
+    };
 
-  // const [viewPort, setViewPort] = useState({
-  //   freqRange: [3, 12],
-  //   depthRange: [10, -1],
-  // });
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < value_uMeter_array.length) {
+        ChangeNewSiteData(index, value_uMeter_array, PSD_Power_array_2);
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 200);
 
-  // const [animationInProgress, setAnimationInProgress] = useState(false);
+    return () => {
+      clearInterval(interval);
+    };
+  };
 
-  // let depth = 10;
-  // const startAnimation = () => {
-  //   if (!animationInProgress) {
-  //     setAnimationInProgress(true);
-
-  //     const animate = setInterval(() => {
-  //       // setAllSitesData(() => ({ ...initialAllSitesData }));
-  //       const newData = getNewSiteData(depth);
-  //       // console.log("TCL: animate -> newData", newData);
-  //       depth -= 0.2;
-  //       setNewSiteData(newData);
-
-  //       // drive deeper than plan, need to adjust the viewport
-  //       if (depth < viewPort.depthRange[1]) {
-  //         const newViewPort = { ...viewPort };
-  //         newViewPort.depthRange[1] -= 2; // reserve 2mm as margin
-  //         setViewPort(newViewPort);
-  //       }
-  //     }, 1000);
-
-  //     setintervalIDPSD(animate);
-  //   }
-  // };
-
-  // const stopAnimation = () => {
-  //   setAnimationInProgress(false);
-  //   clearInterval(intervalIDPSD);
-  // };
+  useEffect(() => {
+    if (startAnimation) {
+      startAnimationFunc();
+    }
+  }, [startAnimation]);
 
   return (
     <>
-      <div className="ml-5">
-        {/* <div className="flex">
-          <button onClick={startAnimation} disabled={animationInProgress}>
-            Start Animation
-          </button>
-          <button onClick={stopAnimation} disabled={!animationInProgress}>
-            Stop Animation
-          </button>
-        </div> */}
-
+      <div>
         <DynamicPsdHeatMap
           xDirection="rtl"
           showLegend={true}
-          widgetSize={{ width: 200, height: 200 }}
-          saturation={1}
-          viewPort={viewPort}
+          saturation={50}
+          widgetSize={{ width: 200, height: heatmapRMSHeight + SCALER_HEIGHT }}
+          viewPort={{
+            freqRange: [1, 40],
+            depthRange: [max, min],
+          }}
           newSiteData={newSiteData}
-          allSitesData={allSitesData}
         />
       </div>
     </>
