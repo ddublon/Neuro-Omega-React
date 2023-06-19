@@ -3,10 +3,55 @@
  * @module views/nt/AOBarChart/AOBarChart
  */
 import React, { useRef } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 import NoDataAvailable from "./NoDataAvailable";
 import { calculateInterval } from "../YAxis/YAxis";
 import { scaleHeight } from "./Util";
+import styled from "styled-components";
+
+const TooltipContainer = styled.div`
+  background: #f0f0f0;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  padding: 10px;
+`;
+
+const TooltipLabel = styled.p`
+  color: #333333;
+  font-weight: bold;
+  margin: 0;
+`;
+
+const TooltipValue = styled.p`
+  color: #454545;
+  margin: 0;
+`;
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    if (payload[0].value === 0) {
+      return null;
+    }
+    console.log("payload", payload);
+    console.log("label", label);
+    const depth = payload[0]["payload"]["depth"];
+
+    return (
+      <TooltipContainer>
+        <TooltipLabel>{`Depth: ${depth}`}</TooltipLabel>
+        <TooltipValue>{`RMS: ${payload[0].value}`}</TooltipValue>
+      </TooltipContainer>
+    );
+  }
+  return null;
+};
 
 function SortDepthAndRms(siteDepthArray, rmsDataArray) {
   const siteArray = [];
@@ -106,6 +151,11 @@ export const AOBarChart = (props) => {
                 tick={false}
                 orientation={props.direction === "rtl" ? "right" : "left"}
                 axisLine={{ stroke: "rgba(0, 0, 0, 0.12)" }}
+              />
+              <Tooltip
+                content={
+                  <CustomTooltip min={min} max={max} height={props.height} />
+                }
               />
               <Bar
                 fill="#000000"

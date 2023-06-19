@@ -5,6 +5,8 @@ import "uplot/dist/uPlot.min.css";
 const RealTimeGraph = ({ isAnimating, title, jsonSource, electrodeNumber }) => {
   const options = {
     title: `${title} 44khz`,
+    backgroundColor: "rgba(26, 26, 19, 0.92)",
+    color: "black",
     width: 280,
     height: 260,
     legend: {

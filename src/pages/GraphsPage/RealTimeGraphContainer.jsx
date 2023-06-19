@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import RealTimeGraph from "./RealTimeGraph";
 import RMSPSDContainer from "./RMSPSDContainer";
+import LFP from "./LFP/LFP";
 
 const sites = [
   "Site1Data.json",
   "Site2Data.json",
-  "Site3Data.json",
-  "Site4Data.json",
+  "output2.json",
   "Site5Data.json",
 ];
-const titles = ["SPK", "RAW", "LFP", "SEG", "site5"];
+const titles = ["SPK 44khz", "RAW 44khz", "SEG 1.3khz", "site5"];
 
 const RealTimeGraphContainer = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -56,6 +56,7 @@ const RealTimeGraphContainer = () => {
               ? `show electrode ${idx}`
               : `hide electrode ${idx}`}
           </button>
+          <LFP electrodeNumber={idx} isAnimating={isAnimating} />
           <h4>{`Electrode_${idx}`}</h4>
           {!hiddenArray[idx] && (
             <div className="flex" key={`container${idx}`}>
@@ -68,6 +69,7 @@ const RealTimeGraphContainer = () => {
                   electrodeNumber={idx}
                 />
               ))}
+
               <RMSPSDContainer key={`RMSPSDContainer-${idx}`} />
             </div>
           )}
