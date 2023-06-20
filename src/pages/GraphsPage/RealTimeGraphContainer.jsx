@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import RealTimeGraph from "./RealTimeGraph";
 import RMSPSDContainer from "./RMSPSDContainer";
+import LFP from "./LFP/LFP";
+import SEG from "./SEG/SEG";
 
-const sites = [
-  "Site1Data.json",
-  "Site2Data.json",
-  "Site3Data.json",
-  "Site4Data.json",
-  "Site5Data.json",
-];
-const titles = ["SPK", "RAW", "LFP", "SEG", "site5"];
+const sites = ["Site1Data.json", "Site2Data.json", ];
+const titles = ["SPK 44khz", "RAW 44khz", ];
 
 const RealTimeGraphContainer = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -59,6 +55,8 @@ const RealTimeGraphContainer = () => {
           <h4>{`Electrode_${idx}`}</h4>
           {!hiddenArray[idx] && (
             <div className="flex" key={`container${idx}`}>
+              <LFP electrodeNumber={idx} isAnimating={isAnimating} />
+              <SEG electrodeNumber={idx} isAnimating={isAnimating} />
               {sites.map((site, i) => (
                 <RealTimeGraph
                   key={`site-${i}-electrode-${idx}`}
@@ -68,6 +66,7 @@ const RealTimeGraphContainer = () => {
                   electrodeNumber={idx}
                 />
               ))}
+
               <RMSPSDContainer key={`RMSPSDContainer-${idx}`} />
             </div>
           )}

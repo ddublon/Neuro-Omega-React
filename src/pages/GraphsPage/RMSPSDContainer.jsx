@@ -6,11 +6,17 @@ import BarChartComponent from "./RMS/BarChartComponent";
 const RMSPSDContainer = () => {
   const [controlHeight, setControlHeight] = useState(600);
   const [startAnimation, setStartAnimation] = useState(false);
-  const MM_IN_PIXELS_LARGE_SCALE = 27;
-  const max = 28;
-  const min = -4;
-  const heatmapRMSHeight =
-    (max - min) * MM_IN_PIXELS_LARGE_SCALE + 1 - controlHeight;
+  const [intervalSpeed, setintervalSpeed] = useState(1000);
+  const [heatmapRMSHeight, setheatmapRMSHeight] = useState(200);
+  const [min, setmin] = useState(0);
+  const [max, setmax] = useState(22);
+  const [maxNRMS, setmaxNRMS] = useState(5);
+  const [direction, setdirection] = useState("rtl");
+  const [minFreq, setminFreq] = useState(1);
+  const [maxFreq, setmaxFreq] = useState(300);
+  const [saturation, setsaturation] = useState(50);
+
+  const unitHeight = heatmapRMSHeight / ((max - min) * 2);
 
   const startAnimationFunc = () => {
     setStartAnimation((prev) => !prev);
@@ -27,12 +33,21 @@ const RMSPSDContainer = () => {
             heatmapRMSHeight={heatmapRMSHeight}
             min={min}
             max={max}
+            maxNRMS={maxNRMS}
+            unitHeight={unitHeight}
+            direction={direction}
+            intervalSpeed={intervalSpeed}
             startAnimation={startAnimation}
           />
           <PSDComponent
+            intervalSpeed={intervalSpeed}
             heatmapRMSHeight={heatmapRMSHeight}
             min={min}
             max={max}
+            direction={direction}
+            minFreq={minFreq}
+            maxFreq={maxFreq}
+            saturation={saturation}
             startAnimation={startAnimation}
           />
           <div>
