@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import RealTimeGraphContainer from "../RealTimeGraphContainer";
-import BarChartComponent from "../RMS/BarChartComponent";
-import PSDComponent from "../PSD/PSDComponent";
+import RealTimeGraphContainer from "../RealTimeGraphs/RealTimeGraphContainer";
 
 const StyledElectrodeInformation = styled.div`
   display: flex;

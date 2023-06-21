@@ -16,6 +16,7 @@ const GraphsPageComponent = ({ data }) => {
   return (
     <StyledGraphsPage>
       <h1>Graphs Page</h1>
+      
       <ElectrodeInformation />
     </StyledGraphsPage>
   );
