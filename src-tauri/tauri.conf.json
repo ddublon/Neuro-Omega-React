@@ -41,8 +41,7 @@
         "maximized": true,
         "resizable": true,
         "title": "haguide-front-end",
-        "theme": "Dark"
-        
+        "theme": "Dark"       
       },
       {
         "fullscreen": false,
