@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import RealTimeGraph from "./RealTimeGraph";
-import RMSPSDContainer from "./RMSPSDContainer";
-import LFP from "./LFP/LFP";
-import SEG from "./SEG/SEG";
+import RMSPSDContainer from "../RMSPSDContainer";
+import LFP from "../LFP/LFP";
+import SEG from "../SEG/SEG";
+import Counter from "./Counter";
 
-const sites = ["Site1Data.json", "Site2Data.json", ];
-const titles = ["SPK 44khz", "RAW 44khz", ];
+const sites = ["Site1Data.json", "Site2Data.json"];
+const titles = ["SPK 44khz", "RAW 44khz"];
 
 const RealTimeGraphContainer = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -42,9 +43,11 @@ const RealTimeGraphContainer = () => {
 
   return (
     <div>
+      <Counter startCounting={isAnimating} />
       <button onClick={handleAnimationToggle}>
         {isAnimating ? "Stop Animation" : "Start Animation"}
       </button>
+
       {Array.from({ length: electrodeCounter }).map((_, idx) => (
         <div key={idx}>
           <button onClick={() => handleHideShow(idx)}>

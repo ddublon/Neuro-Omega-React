@@ -13,6 +13,13 @@
   "tauri": {
     "allowlist": {
       "all": false,
+      "http": {
+        "all": true,
+        "request": true
+      },
+      "fs": {
+        "all": true
+      },
       "shell": {
         "all": false,
         "open": true
@@ -20,29 +27,29 @@
     },
     "bundle": {
       "active": true,
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
+      "icon": ["icons/icon.png", "icons/icon.ico"],
       "identifier": "com.haguide.dev",
       "targets": "all"
     },
     "security": {
       "csp": null
     },
-    "updater": {
-      "active": false
-    },
     "windows": [
       {
         "fullscreen": false,
+        "label": "main",
+        "maximized": true,
         "resizable": true,
-        "title": "Haguide-Front-End",
-        "width": 800,
-        "height": 600
+        "title": "haguide-front-end",
+        "theme": "Dark"       
+      },
+      {
+        "fullscreen": false,
+        "label": "second",
+        "maximized": true,
+        "resizable": true,
+        "title": "haguide-front-end2",
+        "theme": "Dark"
       }
     ]
   }
