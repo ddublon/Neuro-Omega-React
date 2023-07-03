@@ -33,8 +33,8 @@ const LFP = ({ isAnimating, title, jsonSource, electrodeNumber }) => {
   const [DataMat, setDataMat] = useState(null);
   let stopIntervalFunctionPtr = useRef(null);
   let nullStart = 0;
-  let nullEnd = 500;
-  let nullCount = 500;
+  let nullEnd = 100;
+  let nullCount = 100;
 
   useEffect(() => {
     fetch("./output3.json").then((response) => {
@@ -74,7 +74,7 @@ const LFP = ({ isAnimating, title, jsonSource, electrodeNumber }) => {
     let temp = [...chartRef.current.data];
     if (nullStart + nullCount > temp[1].length) {
       nullStart = 0;
-      nullEnd = 500;
+      nullEnd = 100;
     }
 
     // use nullStart nullEnd nullCount to update the data
