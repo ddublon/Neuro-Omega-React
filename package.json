@@ -11,6 +11,7 @@
     "test": "vitest --coverage --ui"
   },
   "dependencies": {
+    "@arction/lcjs": "^4.2.1",
     "@tauri-apps/api": "^1.3.0",
     "antd": "^5.6.4",
     "bootstrap": "^5.2.3",

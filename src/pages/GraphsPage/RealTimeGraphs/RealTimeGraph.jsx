@@ -20,11 +20,11 @@ const RealTimeGraph = ({ isAnimating, title, jsonSource, electrodeNumber }) => {
     const xAxisResponse = await fetch("./xAxis.json");
     const xAxis = await xAxisResponse.json();
 
-    console.log("xAxis", xAxis);
+    //console.log("xAxis", xAxis);
 
     const dataResponse = await fetch(`./${jsonSource}`);
     const jsonData = await dataResponse.json();
-    console.log("jsonData", jsonData);
+    //console.log("jsonData", jsonData);
 
     setDataMat([xAxis, jsonData[electrodeNumber]]);
   };
